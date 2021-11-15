@@ -1,0 +1,27 @@
+<button
+  [disabled]="loading"
+  (click)="changeOne()"
+>
+  one: {{(data$ | async)?.one}}
+</button>
+<button
+  [disabled]="loading"
+  (click)="changeTwo()"
+>
+  two: {{(data$ | async)?.two}}
+</button>
+<hr>
+<table>
+  <tr>
+    <td>Data</td>
+    <td>{{data$ | async | json}}</td>
+  </tr>
+  <tr>
+    <td>Loading</td>
+    <td>{{loading | json}}</td>
+  </tr>
+  <tr>
+    <td>Error</td>
+    <td>{{error}}</td>
+  </tr>
+</table>
